@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval</title>
+    <style>
+       button{
+        padding: 0.5rem 1rem;
+        font-size:1rem;
+        color:black;
+        margin-right:2px;
+        background-color:grey;
+       }
+       button:hover{
+        background-color: blue;
+       }
+       button:active{
+        background-color:grey;
+        opacity:0.6;
+       }
+    </style>
+</head>
+<body>
+    <h1 id="heading">hii</h1>
+    <div class="div1">
+        <button id="start" >start</button>
+        <button id="end" >End</button>
+    </div>
+</body>
+<script>
+    const heading=document.getElementById('heading')
+    let clear;
+    const start=document.querySelector('.div1')
+    start.addEventListener('click',function(e){
+        let clearid;
+       if(e.target.id==='start'){
+        e.target.addEventListener('click',function(){
+            clearid=setInterval(fun1,1000)
+        })
+       }
+       if(e.target.id==='end'){
+        console.log('i')
+        clearInterval(fun1)
+       }
+    })
+    function fun1() {
+         const date=new Date().toLocaleTimeString()
+         heading.innerHTML=date
+    }
+    
+    
+    
+</script>
+</html>

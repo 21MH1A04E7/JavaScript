@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout</title>
+    <style>
+        button{
+            padding:0.5rem 1rem;
+            font-size:1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">hariom</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const heading=document.getElementById('heading')
+    const stopit=setTimeout(function(){
+        heading.innerHTML='sujit'
+    },2000)
+
+    const stop=document.getElementById('stop')
+    stop.addEventListener('click',function(){
+        clearTimeout(stopit)//clear the time out
+    })
+</script>
+</html>
