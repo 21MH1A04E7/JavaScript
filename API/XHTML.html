@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color:rgba(0, 0, 0, 0.836);
+            color:white;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>html api resquest by XHTML</h1>
+    <div>
+        <div><h3>name</h3></div>
+        <div id="image"><img src=""></div>
+        <button>click here to get photo</button>
+    </div>
+    <script>
+        const url='https://api.github.com/users/hiteshchoudhary';
+        const xhr=new XMLHttpRequest();
+        // open a connection to the server using GET method and send request to /api/data endpoint
+        xhr.open("GET",url)
+        xhr.onreadystatechange=function(){
+            // console.log(this.responseText)
+            // console.log(xhr.readyState)
+            if(xhr.readyState==4){
+                //api response coming in string 
+                console.log(typeof this.responseText)
+                //converting string to JSON formate
+                let data=JSON.parse(this.responseText)
+                document.querySelector('h3').innerHTML=`Name: ${data.name}`;
+                document.querySelector('button').addEventListener('click',()=>{
+                    document.querySelector('img').setAttribute('src',data.avatar_url)
+                })
+                console.log(data.avatar_url)
+            }
+        }
+        // console.log(this.readyState)
+        xhr.send()
+    </script>
+</body>
+</html>
