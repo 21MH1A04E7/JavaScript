@@ -20,8 +20,11 @@ console.log(gameName.indexOf('t'));
 const newString = gameName.substring(0, 4)
 console.log(newString);
 
+console.log("---------------->")
 const anotherString = gameName.slice(-8, 4)//it will take negative value
 console.log(anotherString);
+
+console.log("---------------->")
 
 const newStringOne = "   hitesh    "
 console.log(newStringOne);
@@ -33,6 +36,7 @@ console.log(url.replace('%20', '-'))
 
 console.log(url.includes('sundar'))//true or false
 
+console.log(gameName+"------->")
 console.log(gameName.split('-'));
 
 let str = "Hello ";

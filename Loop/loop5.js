@@ -16,7 +16,7 @@ const coding = ["js", "ruby", "java", "python", "cpp"]
 
 // coding.forEach(printMe)
 
-//value ,index,array
+// value ,index,array
 // coding.forEach( (item, index, arr)=> {
 //     console.log(item, index, arr);
 // } )

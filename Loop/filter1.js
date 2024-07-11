@@ -15,10 +15,10 @@ const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // This will return a value greater than 4
 // myNums.find((num) => num > 4)
 
-const newNums = myNums.filter( (num) => {
-    //conditions
-    return num > 4
-} )
+// const newNums = myNums.filter( (num) => {
+//     //conditions
+//     return num > 4
+// } )
 
 // console.log(newNums)
 
@@ -45,10 +45,10 @@ const books = [
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
   ];
 
-//   let userBooks = books.filter( (bk) => bk.genre === 'History')
-//   console.log(userBooks);
+  let userBooks = books.filter( (bk) => bk.genre === 'History')
+  console.log(userBooks);
 
-  let userBooks = books.filter( (bk) => { 
-    return bk.publish >= 1995 && bk.genre === "History"
-})
+//   let userBooks = books.filter( (bk) => { 
+//     return bk.publish >= 1995 && bk.genre === "History"
+// })
   console.log(userBooks);

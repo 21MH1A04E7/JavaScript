@@ -6,7 +6,7 @@ const myObject = {
 }
 
 //for in loop (key)
-for (const key in myObject) {
+for (const [key] in myObject) {
     // console.log(`${key} => shortcut is for ${myObject[key]}`);
 }
 
@@ -14,7 +14,7 @@ const programming = ["js", "rb", "py", "java", "cpp"]
 
 //index
 for (const key in programming) {
-    // console.log(programming[key]);
+    console.log(programming[key]);
 }
 
 // for in loop is not valid of map

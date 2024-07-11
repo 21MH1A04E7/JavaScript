@@ -12,10 +12,10 @@ const balance = new Number(100)
 
 const otherNumber = 123.8966
 
-// console.log(otherNumber.toPrecision(4));//123.8
+console.log(otherNumber.toPrecision(4));//123.8
 
 const hundreds = 1000000
-// console.log(hundreds.toLocaleString('en-IN'));//10,00,000
+console.log(hundreds.toLocaleString('en-IN'));//10,00,000
 
 // +++++++++++++ Maths +++++++++++++++++++++++++++++
 
