@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color_generator</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        main{
+            min-height: 100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .heading{
+            padding-left:20px;
+            font-size:2rem;
+            background-color:rgb(183, 160, 184);
+            border-radius:5px;
+            width:350px;
+        }
+        .button1{
+            height:40px;
+            width:300px;
+            margin-left:30px;
+            font-size:20px;
+            border:none;
+            background-color: rgb(12, 166, 180);
+            color:rgb(89, 255, 0);
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+       .button1:hover{
+        background-color: rgb(228, 225, 56);
+        color:black;
+       } 
+       .button1:active{
+        opacity:0.5;
+       }
+    </style>
+</head>
+<body id="body1">
+    <main>
+        <div class="box1">
+            <h1 class="heading">color: <span id="span1">rgb(245,233,143)</span></h1>
+            <br>
+            <button class="button1">click here to change the color</button>
+        </div>
+    </main>
+    <script>
+        const btn= document.querySelector('.button1');
+        const body=document.querySelector("#body1");
+        const span=document.querySelector("#span1")
+        console.log(body);
+        console.log(btn.textContent);
+        function generate(){
+            let r=Math.floor(Math.random()*256);
+            let g=Math.floor(Math.random()*256);
+            let b=Math.floor(Math.random()*256);
+            return `rgb(${r},${g},${b})`;
+        }
+        btn.addEventListener("click",()=>{
+            let color=generate();
+            body.style.backgroundColor=color;
+            span.textContent=color;
+            console.log(color);
+        })
+
+    </script>
+</body>
+</html>
