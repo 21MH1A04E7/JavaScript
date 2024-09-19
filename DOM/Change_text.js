@@ -4,7 +4,7 @@
 //it will display only unhidden property of tag
 // const mainHeading2=document.getElementById('main-heading');
 // console.log(mainHeading2)
-// // console.log(mainHeading2.innerText)
+// console.log(mainHeading2.innerText)
 //textContent 
 const mainHeading1=document.getElementById("main-heading");
 //print the what are the Content is there inside the tag

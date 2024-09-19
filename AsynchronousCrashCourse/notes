@@ -1,0 +1,143 @@
+Async JavaScript - What and Why?
+In its most basic form, JavaScript is a synchronous, blocking, single-threaded language
+
+• If we have two functions which log messages to the console, code
+executes top down. with only one line executing at any given time
+Blocking
+• No matter how long a previous process takes, the subsequent processes
+won't kick off until the former is completed
+• If function A had to execute an intensive chunk of code. JavaScript has to
+finish that without moving on to function B. Even if that code takes IO
+seconds or 1 minute
+Single-threaded
+• A thread is simply a process of unit that your javascript program can use to run a task
+• Each thread can only do one task at a time
+• JavaScript has just the one thread called the main thread for executing any code
+
+Async JavaScript - How?
+• Just JavaScript is not enough
+• We need new pieces which are outside of JavaScript to help us write
+asynchronous code which is where web browsers come into play
+• Web browsers define functions and APIs that allow us to register functions
+that should not be executed synchronously, and should in$ead be invoked
+asynchronously when some kind of event occurs
+• For example. that could be the passage of time ( setTimeout or setlnterval).
+the user's interaction with the mouse (addEventListener). or the arrival Of
+data over the network (callbacks. Promises, async-await)
+• You can let your code do several things at the same time without stopping or blocking your main thread
+
+Timeouts & Intervals
+The traditional methods JavaScript has available for running code asynchronously -
+• after a set time period elapsed or
+• at regular intervals of time
+• setTimeout()
+• setlnterval()
+
+setTimeout()
+• The setTimeout() function executes a particular block of code once after a specified time has elapsed
+1 setTieout(function, duration, para•l, para•2, )
+
+• The first parameter is a function to run, or a reference to a function defined elsewhere
+• The second parameter is a number representing the duration in milliseconds to wait
+before executing the code
+• After the second parameter. you can pass in zero or more values that represent any
+parameters you want to pass to the function when it is run
+
+setTimeout()
+• To clear a timeout. you can use the clearTimeout() method passing in the identifier
+retumed by setTimeout as a parameter
+
+set interval
+
+setlnterval()
+• The setlnterval() function repeatedly runs the same code over and over again at regular intervals
+
+• The first parameter is the code to execute
+• The second parameter is the duration in milliseconds
+• After the second parameter. you can pass in zero or more values that
+represent any parameters you want to pass to the function when it is run
+
+clearInterval()
+
+
+Note worthy points
+I. Timers and intervals are not part of JavaScript itself. They are implemented by the browser and setTimeout and setlnterval are basically names given to that functionality in JavaScript
+2 duration parameter is the minimum delay , not guranteed delay
+3.It is possible to achieve the same effect as setlnterval with a recursive setTimeout 
+
+In JavaScript. functions are first class objects
+• Just like an object, a function can be passed as an argument to a function
+• A function can also be returned as values from other functions
+function
+
+• Any function that is passed as an argument to another function is called a callback
+function in JavaScript
+• The function which accepts a function as an argument or retums a function is called a
+higher order function
+
+Callbacks
+Asynchronous callbacks
+• An asynchronous callback is a callback that is often used to
+continue or
+resume code execution after an asynchronous operation has completed
+• Callbacks are used to delay the execution of a function until a particular time or event has occured
+• Data fetching takes time and we can only run the function we want to after the data has been fetched and not immediately
+
+Callbacks summary for interview
+• Callbacks are functions passed as arguments to other functions
+• They can be synchronous if they execute immediately or they can be asynchronous where they
+get exected after some time has passed. some event has occured or some data has been fetched
+• Callbacks were the go to pattern for asynchronously running code after fetching some data
+• As more and more requests had to be made based on the data obtained from the previous
+requests, developers started to encounter what is known as the callback he'/
+• Callback hell makes the code difficult to reason about
+
+promise
+• A promise is a result of an asynchronous operation that may or may not be resolved  
+
+Promise - MDN definition
+A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason
+
+What?
+A Promise is simply an object in JavaScript
+A promise is always in one of the three states
+• pending: which is initial state, neither fulfilled nor rejected
+• fulfilled: meaning that the operation completed successfully
+• rejected: meaning that the operation failed
+
+why
+Promises help us deal with asynchronous code in a far
+more simpler way comapred to callbacks
+Callback hell can be avoided with Promises
+
+How create a Promise
+const promis=new Promise((resolve,reject)=>{
+    
+})
+
+Promise status : pending to fulfilled? then() is executed
+Promise status : pending to rejected? catch() is executed
+
+
+3. Promise - Static methods
+3.1 Promise.all()
+Query multiple APIs and perform some actions but only after all the APIs have finished loading
+
+Promise.all([promise1,promise2,promise3]).then((e))
+console. log (values);
+• The Promise.all() method takes an iterable of promises as an input and returns
+a single Promise that resolves to an array of the results of the input promises
+• Retumed promise will resolve when all of the input's promises have resolved,
+or if the input iterable contains no promises
+• It rejects immediately if any of the input promises reject or the non-promises
+throw an error, and will reject with this first rejection message / error
+
+3. Promise - Static methods
+3.2 Promise.altSettied()
+Promise.allSettied() waits for all input promises to complete
+regardless of whether or not one of them is rejected
+
+3. Promise - Static methods
+3.3 Promise.race()
+The Promise.race() method returns a promise that fulfills or rejects as soon as one of
+the input promises fulfills or rejects. with the value or reason from that promise
