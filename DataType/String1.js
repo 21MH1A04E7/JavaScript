@@ -53,7 +53,7 @@ console.log(newstring);
 3 indexOf('char')
 4 toUpperCase()
 5 toLowerCase()
-6 split('separator')
+6 split('separator')//array
 7 includes('string')  ->true/false
 8 repalce('origina','repace value')
 9 trim()//remove leading whitespace

@@ -17,7 +17,7 @@ if (true) {
 function one(){
     const username = "hitesh"
 
-    function two(){
+    function two(){//closure
         const website = "youtube"
         console.log(username);
     }
@@ -52,7 +52,7 @@ function addone(num){
 
 
 
-addTwo(5)
+// addTwo(5)
 const addTwo = function(num){
     return num + 2
 }
